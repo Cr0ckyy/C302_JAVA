@@ -12,34 +12,34 @@ public class ForecastReportingApp_pojo {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 
-			File xmlFile = new File("daily_forecast.xml");
-			Document document = builder.parse(xmlFile);
+			var xmlFile = new File("C302_P02_XML/daily_forecast.xml");
+			var document = builder.parse(xmlFile);
 
-			ForecastReport forecastReport = new ForecastReport();
+			var forecastReport = new ForecastReport();
 
-			Element rootElement = document.getDocumentElement();
+			var rootElement = document.getDocumentElement();
 
 			// "id" element
-			Element dateElement = (Element) rootElement.getElementsByTagName("date").item(0);
+			var dateElement = (Element) rootElement.getElementsByTagName("date").item(0);
 			forecastReport.setDate(dateElement.getTextContent());
 
 			// "description" element
-			Element descElement = (Element) rootElement.getElementsByTagName("description").item(0);
+			var descElement = (Element) rootElement.getElementsByTagName("description").item(0);
 			forecastReport.setDesc(descElement.getTextContent());
 
 			// "windSpeed" element
-			Element windElement = (Element) rootElement.getElementsByTagName("windSpeed").item(0);
+			var windElement = (Element) rootElement.getElementsByTagName("windSpeed").item(0);
 			forecastReport.setWindSpeed(Double.parseDouble(windElement.getTextContent()));
 			forecastReport.setWindUnit(windElement.getAttribute("unit"));
 
 			// "temperatures" element
-			Element tempElement = (Element) rootElement.getElementsByTagName("temperatures").item(0);
-			Element maxTempElement = (Element) tempElement.getElementsByTagName("maxTemp").item(0);
+			var tempElement = (Element) rootElement.getElementsByTagName("temperatures").item(0);
+			var maxTempElement = (Element) tempElement.getElementsByTagName("maxTemp").item(0);
 			forecastReport.setMaxTemp(Double.parseDouble(maxTempElement.getTextContent()));
 			forecastReport.setMaxTempUnit(maxTempElement.getAttribute("unit"));
 
 			// "minTemp" element
-			Element minTempElement = (Element) tempElement.getElementsByTagName("minTemp").item(0);
+			var minTempElement = (Element) tempElement.getElementsByTagName("minTemp").item(0);
 			forecastReport.setMinTemp(Double.parseDouble(minTempElement.getTextContent()));
 			forecastReport.setMinTempUnit(minTempElement.getAttribute("unit"));
 

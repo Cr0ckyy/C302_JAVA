@@ -7,7 +7,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
-public class DailyForecastApp {
+public class CreateDailyForecastAppXML {
 
     public static void main(String[] args) {
         try {

@@ -15,7 +15,7 @@ public class ReadModuleXML {
 			var factory = DocumentBuilderFactory.newInstance();
 			var builder = factory.newDocumentBuilder();
 
-			var xmlFile = new File("module_c302.xml");
+			var xmlFile = new File("C302_P02_XML/module_c302.xml");
 			var document = builder.parse(xmlFile);
 
 			// Get document root element "module"

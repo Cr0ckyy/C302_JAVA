@@ -14,8 +14,8 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class NEA_WeatherApp {
-	public NEA_WeatherApp() {
+public class CreateNEAWeatherAppXML {
+	public CreateNEAWeatherAppXML() {
 	}
 
 	public static void main(String[] args) {
@@ -95,8 +95,8 @@ public class NEA_WeatherApp {
 			// Write the content into xml file
 			saveXML(document, "C302_P01_XML_NEA_WeatherApp.xml");
 
-		} catch (ParserConfigurationException var15) {
-			var15.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
 		}
 
 	}

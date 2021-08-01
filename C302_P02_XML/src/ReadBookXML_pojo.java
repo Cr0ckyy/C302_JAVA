@@ -10,30 +10,30 @@ public class ReadBookXML_pojo {
 
 	public static void main(String[] args) {
 		try {
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder = factory.newDocumentBuilder();
+			var factory = DocumentBuilderFactory.newInstance();
+			var builder = factory.newDocumentBuilder();
 
-			File xmlFile = new File("book.xml");
-			Document document = builder.parse(xmlFile);
+			var xmlFile = new File("C302_P02_XML/book.xml");
+			var document = builder.parse(xmlFile);
 
-			Book book = new Book();
+			var book = new Book();
 
-			Element rootElement = document.getDocumentElement();
+			var rootElement = document.getDocumentElement();
 			System.out.println("Root Element: " + rootElement.getTagName());
 
-			NodeList titleElement = rootElement.getElementsByTagName("title");
-			Element langElement = (Element) titleElement.item(0);
+			var titleElement = rootElement.getElementsByTagName("title");
+			var langElement = (Element) titleElement.item(0);
 			book.setTitle(titleElement.item(0).getTextContent());
 			book.setLang(langElement.getAttribute("lang"));
 
-			NodeList authorElement = rootElement.getElementsByTagName("author");
+			var authorElement = rootElement.getElementsByTagName("author");
 			book.setAuthor(authorElement.item(0).getTextContent());
 
-			NodeList yearElement = rootElement.getElementsByTagName("year");
+			var yearElement = rootElement.getElementsByTagName("year");
 			book.setYear(yearElement.item(0).getTextContent());
 
-			NodeList priceElement = rootElement.getElementsByTagName("price");
-			Element unitElement = (Element) priceElement.item(0);
+			var priceElement = rootElement.getElementsByTagName("price");
+			var unitElement = (Element) priceElement.item(0);
 			book.setUnit(unitElement.getAttribute("unit"));
 			book.setPrice(priceElement.item(0).getTextContent());
 		} catch (Exception e) {

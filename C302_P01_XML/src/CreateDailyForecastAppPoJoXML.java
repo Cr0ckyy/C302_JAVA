@@ -17,7 +17,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class DailyForecastApp_pojo {
+public class CreateDailyForecastAppPoJoXML {
 
 	public static void main(String[] args) {
 		try {

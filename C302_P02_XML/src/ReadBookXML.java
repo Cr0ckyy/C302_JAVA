@@ -11,28 +11,28 @@ public class ReadBookXML {
 
 	public static void main(String[] args) {
 		try {
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder = factory.newDocumentBuilder();
+			var factory = DocumentBuilderFactory.newInstance();
+			var builder = factory.newDocumentBuilder();
 
-			File xmlFile = new File("book.xml");
-			Document document = builder.parse(xmlFile);
+			var xmlFile = new File("C302_P02_XML/book.xml");
+			var document = builder.parse(xmlFile);
 
-			Element rootElement = document.getDocumentElement();
+			var rootElement = document.getDocumentElement();
 			System.out.println("Root Element: " + rootElement.getTagName());
 
-			NodeList titleElement = rootElement.getElementsByTagName("title");
-			Element langElement = (Element) titleElement.item(0);
+			var titleElement = rootElement.getElementsByTagName("title");
+			var langElement = (Element) titleElement.item(0);
 			System.out.println("Title: " + titleElement.item(0).getTextContent());
 			System.out.println("Language: " + langElement.getAttribute("lang"));
 
-			NodeList authorElement = rootElement.getElementsByTagName("author");
+			var authorElement = rootElement.getElementsByTagName("author");
 			System.out.println("Author: " + authorElement.item(0).getTextContent());
 
-			NodeList yearElement = rootElement.getElementsByTagName("year");
+			var yearElement = rootElement.getElementsByTagName("year");
 			System.out.println("Year: " + yearElement.item(0).getTextContent());
 
-			NodeList priceElement = rootElement.getElementsByTagName("price");
-			Element unitElement = (Element) priceElement.item(0);
+			var priceElement = rootElement.getElementsByTagName("price");
+			var unitElement = (Element) priceElement.item(0);
 			System.out.println(
 					"Price: " + unitElement.getAttribute("unit") + " " + priceElement.item(0).getTextContent());
 
