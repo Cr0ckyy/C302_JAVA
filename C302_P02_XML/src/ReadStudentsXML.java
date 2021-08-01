@@ -33,7 +33,7 @@ public class ReadStudentsXML {
 					// list.item(index) returns the node at the specified index,
 					// or null if the index is out of range.
 					var studentElement = (Element) studentNodeList.item(i);
-					System.out.println("Student Name: " + studentElement.getAttribute("name"));
+					System.out.println("\nStudent Name: " + studentElement.getAttribute("name"));
 
 					var contactsNodeList = studentElement.getElementsByTagName("contacts");
 					System.out.println("# of contacts: " + contactsNodeList.getLength());

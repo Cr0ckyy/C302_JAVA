@@ -4,7 +4,7 @@ import org.w3c.dom.Node;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
-public class ForecastReportingApp_Enhancement {
+public class ReadForecastReportingAppEnhancementXML {
 
     public static void main(String[] args) {
         try {
