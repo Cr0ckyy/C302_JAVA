@@ -61,7 +61,7 @@ public class DailyForecastApp {
             rootElement.appendChild(windSpeedElement);
 
             // Write the content into xml file
-            saveXML(document, "dailyForecast.xml");
+            saveXML(document, "C302_P01_XML_dailyForecast.xml");
 
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();

@@ -63,7 +63,7 @@ public class StudentXMLBuilder {
 				studentsElement.appendChild(contactsElement);
 			}
 
-			saveXML(document, "student.xml");
+			saveXML(document, "C302_P01_XML_student.xml");
 
 		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
@@ -77,7 +77,7 @@ public class StudentXMLBuilder {
 		try {
 			Transformer transformer = factory.newTransformer();
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+			transformer.setOutputProperty("{https://xml.apache.org/xslt}indent-amount", "4");
 
 			Source src = new DOMSource(document);
 			Result dest = new StreamResult(new File(filename));
@@ -85,8 +85,6 @@ public class StudentXMLBuilder {
 
 			System.out.println(filename + " created successfully...");
 
-		} catch (TransformerConfigurationException e) {
-			result = false;
 		} catch (TransformerException e) {
 			result = false;
 		}

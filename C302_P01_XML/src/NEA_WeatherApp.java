@@ -93,7 +93,7 @@ public class NEA_WeatherApp {
 			rootElement.appendChild(contentElement);
 
 			// Write the content into xml file
-			saveXML(document, "NEA_WeatherApp.xml");
+			saveXML(document, "C302_P01_XML_NEA_WeatherApp.xml");
 
 		} catch (ParserConfigurationException var15) {
 			var15.printStackTrace();

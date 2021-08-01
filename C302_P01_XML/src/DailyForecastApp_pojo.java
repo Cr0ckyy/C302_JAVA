@@ -71,7 +71,7 @@ public class DailyForecastApp_pojo {
 				rootElement.appendChild(dailyForecastElement);
 			}
 			// Write the content into xml file
-			saveXML(document, "dailyForecast_pojo.xml");
+			saveXML(document, "C302_P01_XML_dailyForecast_pojo.xml");
 
 		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
@@ -85,7 +85,7 @@ public class DailyForecastApp_pojo {
 		try {
 			Transformer transformer = factory.newTransformer();
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+			transformer.setOutputProperty("{https://xml.apache.org/xslt}indent-amount", "4");
 
 			Source src = new DOMSource(document);
 			Result dest = new StreamResult(new File(filename));
