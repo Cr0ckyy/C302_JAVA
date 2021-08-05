@@ -1,1 +1,22 @@
-{"dailyForecast":{"date":"2018-04-01","temperatures":[{"maxTemp":{"unit":"°C","value":32.0},"minTemp":{"unit":"°C","value":27.0}}],"description":"Sunny","windSpeed":{"unit":"km\/hr","value":3}}}
+{
+  "dailyForecast": {
+    "date": "2018-04-01",
+    "temperatures": [
+      {
+        "maxTemp": {
+          "unit": "°C",
+          "value": 32.0
+        },
+        "minTemp": {
+          "unit": "°C",
+          "value": 27.0
+        }
+      }
+    ],
+    "description": "Sunny",
+    "windSpeed": {
+      "unit": "km\/hr",
+      "value": 3
+    }
+  }
+}

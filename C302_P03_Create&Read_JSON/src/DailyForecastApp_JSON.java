@@ -11,23 +11,16 @@ public class DailyForecastApp_JSON {
 
         String[] menu = {"Create Weather Forecast JSON file", "Display Weather Forecast"};
 
-        int choice = Helper.getUserOption("WEATHER FORECAST", menu);
+        var choice = Helper.getUserOption("WEATHER FORECAST", menu);
 
         while (choice != 0) {
 
-            switch (choice) {
-
-                case 1:
-                    createWeatherForecast_JSON();
-                    break;
-
-                case 2:
-                    readWeatherForecast_JSON();
-                    break;
-
-                default:
-                    System.out.println("Invalid choice. Please try again!");
-
+            if (choice == 1) {
+                createWeatherForecast_JSON();
+            } else if (choice == 2) {
+                readWeatherForecast_JSON();
+            } else {
+                System.out.println("Invalid choice. Please try again!");
             }
 
             System.out.println();

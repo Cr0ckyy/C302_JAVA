@@ -5,7 +5,7 @@ import org.json.simple.parser.JSONParser;
 
 public class ReadBookJSON {
     public static void main(String[] args) {
-
+        System.out.println();
         var parser = new JSONParser();
 
         try {
@@ -27,6 +27,7 @@ public class ReadBookJSON {
             System.out.println("price: " + price);
 
         } catch (Exception e) {
+
             e.printStackTrace();
         }
     }

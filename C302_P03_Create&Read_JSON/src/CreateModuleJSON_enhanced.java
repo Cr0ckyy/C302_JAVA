@@ -28,6 +28,7 @@ public class CreateModuleJSON_enhanced {
 		classesJSONArray.add("1-W64C");
 
 		jsonObject.put("classes", classesJSONArray);
+		System.out.println("\n" + jsonObject.toJSONString());
 		saveJSONFile(jsonObject, "C302_P03_JSON_module_enhanced.json");
 	}
 

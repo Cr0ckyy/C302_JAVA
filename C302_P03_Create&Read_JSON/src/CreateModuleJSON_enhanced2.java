@@ -23,7 +23,6 @@ public class CreateModuleJSON_enhanced2 {
         classJSONArray.add("1-W64C");
 
         obj2.put("classes", classJSONArray);
-
         obj1.put("module", obj2);
 
         /*
@@ -33,7 +32,7 @@ public class CreateModuleJSON_enhanced2 {
          *  <class>3-W64C</class>
          * </classes>
          */
-
+        System.out.println("\n" + obj1.toJSONString());
         saveJSONFile(obj1, "C302_P03_JSON_module_enhanced2.json");
     }
 
