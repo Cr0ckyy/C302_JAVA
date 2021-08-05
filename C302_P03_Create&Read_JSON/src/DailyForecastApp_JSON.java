@@ -36,7 +36,8 @@ public class DailyForecastApp_JSON {
         // TODO: Case 1a - Create JSON file
 
         // creating relevant JSONObjects
-        var dailyForecastObj = new JSONObject();
+        JSONObject dailyForecastObj;
+        dailyForecastObj = new JSONObject();
         var weatherData = new JSONObject();
         var tempArray = new JSONArray();
         var temp = new JSONObject();

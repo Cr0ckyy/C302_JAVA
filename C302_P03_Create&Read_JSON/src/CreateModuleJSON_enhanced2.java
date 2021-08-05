@@ -13,17 +13,19 @@ public class CreateModuleJSON_enhanced2 {
         var obj1 = new JSONObject();
         var obj2 = new JSONObject();
 
-        obj1.put("code", "C302");
-        obj1.put("year", 3);
-        obj1.put("title", "web Services");
 
+        obj1.put("code", "C302");
+        obj1.put("title", "web Services");
+        obj1.put("year", 3);
+
+        // class JSONArray is inside of the module
+        obj1.put("module", obj2);
         var classJSONArray = new JSONArray();
         classJSONArray.add("1-W64A");
         classJSONArray.add("1-W64B");
         classJSONArray.add("1-W64C");
-
         obj2.put("classes", classJSONArray);
-        obj1.put("module", obj2);
+
 
         /*
          * <classes>

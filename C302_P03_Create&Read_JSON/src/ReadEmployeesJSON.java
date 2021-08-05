@@ -1,8 +1,11 @@
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class ReadEmployeesJSON {
 	public static void main(String[] args) {
@@ -11,18 +14,18 @@ public class ReadEmployeesJSON {
 
 		try {
 
-			var employeesJSONParser = jSONParser.parse(new FileReader("C302/C302_P03_JSON_employees.json'"));
+			var employeesJSONParser = jSONParser.parse(new FileReader("C302_P03_JSON_employees.json"));
 
-			var employeejsonObject = (JSONObject) employeesJSONParser;
+			var employeeJsonObject = (JSONObject) employeesJSONParser;
 
-			var employeeJSONArray = (JSONArray) employeejsonObject.get("employees");
+			var employeeJSONArray = (JSONArray) employeeJsonObject.get("employees");
+			System.out.println();
 
-			for (var i = 0; i < employeeJSONArray.size(); i++) {
-				var name = (String) employeeJSONArray.get(i);
+			for (var name : employeeJSONArray) {
 				System.out.println("name: " + name);
 			}
 
-		} catch (Exception e) {
+		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
 	}

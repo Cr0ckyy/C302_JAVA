@@ -12,15 +12,15 @@ public class ThreeDayForecastApp_JSON {
     public static void main(String[] args) {
 
         // create
-        ArrayList<ThreeDayForecast> weatherArrayList = new ArrayList<>();
+        ArrayList<ThreeDayForecast> weathers = new ArrayList<>();
 
-        weatherArrayList.add(new ThreeDayForecast("2018-04-01", "Sunny", "�C", 32.0, "�C", 27.0, "km/hr", 3));
-        weatherArrayList.add(new ThreeDayForecast("2018-04-02", "Rainy", "�C", 28.0, "�C", 23.0, "km/hr", 7));
-        weatherArrayList.add(new ThreeDayForecast("2018-04-03", "Cloudy", "�C", 30.0, "�C", 25.0, "km/hr", 5));
+        weathers.add(new ThreeDayForecast("2018-04-01", "Sunny", "C", 32.0, "C", 27.0, "km/hr", 3));
+        weathers.add(new ThreeDayForecast("2018-04-02", "Rainy", "C", 28.0, "C", 23.0, "km/hr", 7));
+        weathers.add(new ThreeDayForecast("2018-04-03", "Cloudy", "C", 30.0, "C", 25.0, "km/hr", 5));
 
         var weatherJSONArray = new JSONArray();
 
-        for (var i : weatherArrayList) {
+        for (var weather : weathers) {
 
             var dailyForecastObj = new JSONObject();
             var weatherData = new JSONObject();
@@ -31,20 +31,20 @@ public class ThreeDayForecastApp_JSON {
             var windSpeed = new JSONObject();
 
             // get date object
-            weatherData.put("date", i.getDate());
+            weatherData.put("date", weather.getDate());
 
             // get description object
-            weatherData.put("description", i.getDescription());
+            weatherData.put("description", weather.getDescription());
 
             // get Temperature objects
             // get maxTemp object
-            maxTemp.put("unit", i.getMaxTempUnit());
-            maxTemp.put("value", i.getMaxTempValue());
+            maxTemp.put("unit", weather.getMaxTempUnit());
+            maxTemp.put("value", weather.getMaxTempValue());
             temp.put("maxTemp", maxTemp);
 
             // get minTemp object
-            minTemp.put("unit", i.getMinTempUnit());
-            minTemp.put("value", i.getMinTempValue());
+            minTemp.put("unit", weather.getMinTempUnit());
+            minTemp.put("value", weather.getMinTempValue());
             temp.put("minTemp", minTemp);
 
             // Adding Temperature objects into jsonArray
@@ -52,8 +52,8 @@ public class ThreeDayForecastApp_JSON {
             weatherData.put("temperatures", tempArray);
 
             // get windSpeed object
-            windSpeed.put("unit", i.getWindSpeedUnit());
-            windSpeed.put("value", i.getWindSpeedValue());
+            windSpeed.put("unit", weather.getWindSpeedUnit());
+            windSpeed.put("value", weather.getWindSpeedValue());
             weatherData.put("windSpeed", windSpeed);
 
             dailyForecastObj.put("dailyForecast", weatherData);
@@ -67,13 +67,13 @@ public class ThreeDayForecastApp_JSON {
 
         try {
 
-            var threeDayForecastObj = parser.parse(new FileReader("C302_P03_JSON_ThreeDayForecast.json"));
-            var tempWeatherJSONArray = (JSONArray) threeDayForecastObj;
+            var threeDayForecastJSONObject = parser.parse(new FileReader("C302_P03_JSON_ThreeDayForecast.json"));
+            var weatherJSONObjects = (JSONArray) threeDayForecastJSONObject;
 
-            for (var i : tempWeatherJSONArray) {
+            for (var i : weatherJSONObjects) {
 
-                var tempWeatherJSONObject = (JSONObject) i;
-                var dailyForecastJSONObject = (JSONObject) tempWeatherJSONObject.get("dailyForecast");
+                var weatherJSONObject = (JSONObject) i;
+                var dailyForecastJSONObject = (JSONObject) weatherJSONObject.get("dailyForecast");
 
                 var date = (String) dailyForecastJSONObject.get("date");
                 System.out.println("Date: " + date);

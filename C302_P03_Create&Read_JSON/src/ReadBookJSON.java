@@ -10,7 +10,6 @@ public class ReadBookJSON {
 
         try {
 
-
             var bookJSONParser = parser.parse(new FileReader("C302_P03_JSON_book.json"));
             var bookJSONObject = (JSONObject) bookJSONParser;
 
