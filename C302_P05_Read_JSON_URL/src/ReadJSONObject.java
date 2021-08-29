@@ -10,7 +10,6 @@ public class ReadJSONObject {
 
     public static void main(String[] args) {
 
-
         try {
             // TODO: 1.To enable the url, open the Xampp Apache project
             URL url = new URL("http://localhost/C302_P05_Sakila/person.json");

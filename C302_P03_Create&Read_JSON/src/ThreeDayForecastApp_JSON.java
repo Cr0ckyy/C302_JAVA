@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
+import static java.lang.System.*;
+
 public class ThreeDayForecastApp_JSON {
 
     @SuppressWarnings({"unchecked", "unused"})
@@ -72,30 +74,30 @@ public class ThreeDayForecastApp_JSON {
 
             for (var i : weatherJSONObjects) {
 
-                var weatherJSONObject = (JSONObject) i;
-                var dailyForecastJSONObject = (JSONObject) weatherJSONObject.get("dailyForecast");
+                JSONObject weatherJSONObject = (JSONObject) i;
+                JSONObject dailyForecastJSONObject = (JSONObject) weatherJSONObject.get("dailyForecast");
 
-                var date = (String) dailyForecastJSONObject.get("date");
-                System.out.println("Date: " + date);
+                String date = (String) dailyForecastJSONObject.get("date");
+                out.println("Date: " + date);
 
                 var description = (String) dailyForecastJSONObject.get("description");
-                System.out.println("Description: " + description);
+                out.println("Description: " + description);
 
                 var windSpeed = (JSONObject) dailyForecastJSONObject.get("windSpeed");
                 var windSpeedUnit = (String) windSpeed.get("unit");
                 var windSpeedValue = (Long) windSpeed.get("value");
-                System.out.println("Wind Speed: " + windSpeedValue + windSpeedUnit);
+                out.println("Wind Speed: " + windSpeedValue + windSpeedUnit);
 
                 var temperature = (JSONArray) dailyForecastJSONObject.get("temperatures");
                 var maxTemp = (JSONObject) ((JSONObject) temperature.get(0)).get("maxTemp");
                 var maxTempUnit = (String) maxTemp.get("unit");
                 var maxTempValue = (Double) maxTemp.get("value");
-                System.out.println("Maximum Temperature: " + maxTempValue + maxTempUnit);
+                out.println("Maximum Temperature: " + maxTempValue + maxTempUnit);
 
                 var minTemp = (JSONObject) ((JSONObject) temperature.get(0)).get("minTemp");
                 var minTempUnit = (String) minTemp.get("unit");
                 var minTempValue = (Double) minTemp.get("value");
-                System.out.println("Minimum Temperature: " + minTempValue + maxTempUnit + "\n");
+                out.println("Minimum Temperature: " + minTempValue + maxTempUnit + "\n");
 
             }
         } catch (Exception e) {
@@ -111,7 +113,7 @@ public class ThreeDayForecastApp_JSON {
             file.flush();
             file.close();
 
-            System.out.println(filename + " created successfully...\n");
+            out.println(filename + " created successfully...\n");
 
         } catch (Exception e) {
             e.printStackTrace();
