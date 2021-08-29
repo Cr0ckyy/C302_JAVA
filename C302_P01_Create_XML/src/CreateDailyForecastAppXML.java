@@ -13,10 +13,10 @@ public class CreateDailyForecastAppXML {
         try {
             // Create a DocumentBuilder
             var factory = DocumentBuilderFactory.newInstance();
-			var builder = factory.newDocumentBuilder();
+            var builder = factory.newDocumentBuilder();
 
             // Create a Document
-			var document = builder.newDocument();
+            var document = builder.newDocument();
 
             /*
              * Create the XML content with Element class. 1. Create the Element object 2.
@@ -70,10 +70,10 @@ public class CreateDailyForecastAppXML {
 
     private static void saveXML(Document document, String filename) {
         var factory = TransformerFactory.newInstance();
-        boolean result = true;
+
 
         try {
-			var transformer = factory.newTransformer();
+            var transformer = factory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 
@@ -83,11 +83,9 @@ public class CreateDailyForecastAppXML {
 
             System.out.println(filename + " created successfully...");
 
-        } catch (TransformerConfigurationException e) {
-            result = false;
         } catch (TransformerException e) {
-            result = false;
+            e.printStackTrace();
         }
 
-	}
+    }
 }
