@@ -1,32 +1,34 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
+import java.io.IOException;
+
 public class ReadEmployeesJSON {
-	public static void main(String[] args) {
 
-		var jSONParser = new JSONParser();
+    public static void main(String[] args) {
 
-		try {
+        var jSONParser = new JSONParser();
 
-			var employeesJSONParser = jSONParser.parse(new FileReader("C302_P03_JSON_employees.json"));
+        try {
 
-			var employeeJsonObject = (JSONObject) employeesJSONParser;
+            var employeesJSONParser = jSONParser.parse(new FileReader("C302_P03_JSON_employees.json"));
 
-			var employeeJSONArray = (JSONArray) employeeJsonObject.get("employees");
-			System.out.println();
+            var employeeJsonObject = (JSONObject) employeesJSONParser;
 
-			for (var name : employeeJSONArray) {
-				System.out.println("name: " + name);
-			}
+            var employeeJSONArray = (JSONArray) employeeJsonObject.get("employees");
+            System.out.println();
 
-		} catch (IOException | ParseException e) {
-			e.printStackTrace();
-		}
-	}
+            for (var name : employeeJSONArray) {
+                System.out.println("name: " + name);
+            }
+
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

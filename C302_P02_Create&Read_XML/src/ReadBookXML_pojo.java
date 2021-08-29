@@ -10,9 +10,9 @@ public class ReadBookXML_pojo {
 
 	public static void main(String[] args) {
 		try {
+
 			var factory = DocumentBuilderFactory.newInstance();
 			var builder = factory.newDocumentBuilder();
-
 			var xmlFile = new File("C302_P02_XML/book.xml");
 			var document = builder.parse(xmlFile);
 

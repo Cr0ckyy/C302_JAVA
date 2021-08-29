@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/C302_P01_Create_XML/C302_P01_XML.iml" filepath="$PROJECT_DIR$/C302_P01_Create_XML/C302_P01_XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/C302_P02_Create&amp;Read_XML/C302_P02_Create&amp;Read_XML.iml" filepath="$PROJECT_DIR$/C302_P02_Create&amp;Read_XML/C302_P02_Create&amp;Read_XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/C302_P03_Create&amp;Read_JSON/C302_P03_Create&amp;Read_JSON.iml" filepath="$PROJECT_DIR$/C302_P03_Create&amp;Read_JSON/C302_P03_Create&amp;Read_JSON.iml" />
+      <module fileurl="file://$PROJECT_DIR$/C302_P05_Read_JSON_URL/C302_P05_Read_JSON_URL.iml" filepath="$PROJECT_DIR$/C302_P05_Read_JSON_URL/C302_P05_Read_JSON_URL.iml" />
     </modules>
   </component>
 </project>
