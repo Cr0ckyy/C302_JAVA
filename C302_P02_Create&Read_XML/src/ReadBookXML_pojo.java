@@ -10,7 +10,7 @@ public class ReadBookXML_pojo {
 
             var factory = DocumentBuilderFactory.newInstance();
             var builder = factory.newDocumentBuilder();
-            var xmlFile = new File("C302_P02_XML/book.xml");
+            var xmlFile = new File("C302_P02_Create&Read_XML/book.xml");
             var document = builder.parse(xmlFile);
 
             var book = new Book();

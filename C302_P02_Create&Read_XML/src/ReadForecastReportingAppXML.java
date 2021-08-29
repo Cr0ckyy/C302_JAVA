@@ -19,7 +19,7 @@ public class ReadForecastReportingAppXML {
 
 
             //TODO: Task 1
-            var xmlFile = new File("C302_P02_XML/daily_forecast.xml");
+            var xmlFile = new File("C302_P02_Create&Read_XML/daily_forecast.xml");
             var document = builder.parse(xmlFile);
 
             var rootElement = document.getDocumentElement();

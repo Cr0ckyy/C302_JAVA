@@ -14,7 +14,7 @@ public class ReadModulesXML {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
 
-            File xmlFile = new File("C302_P02_XML/modules.xml");
+            File xmlFile = new File("C302_P02_Create&Read_XML/modules.xml");
             Document document = builder.parse(xmlFile);
 
             // Get document root element "modules"

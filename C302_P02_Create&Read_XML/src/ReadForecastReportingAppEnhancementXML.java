@@ -10,7 +10,7 @@ public class ReadForecastReportingAppEnhancementXML {
             var factory = DocumentBuilderFactory.newInstance();
             var builder = factory.newDocumentBuilder();
 
-            var xmlFile = new File("C302_P02_XML/three_days_forecast.xml");
+            var xmlFile = new File("C302_P02_Create&Read_XML/three_days_forecast.xml");
             var document = builder.parse(xmlFile);
 
             var rootElement = document.getDocumentElement();

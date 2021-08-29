@@ -11,7 +11,7 @@ public class ForecastReportingApp_pojo {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
 
-            var xmlFile = new File("C302_P02_XML/daily_forecast.xml");
+            var xmlFile = new File("C302_P02_Create&Read_XML/daily_forecast.xml");
             var document = builder.parse(xmlFile);
             var forecastReport = new ForecastReport();
             var rootElement = document.getDocumentElement();
