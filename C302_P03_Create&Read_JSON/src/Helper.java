@@ -1,6 +1,10 @@
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
 
 public class Helper {
+
+    private static String quit = "0";
 
     @SuppressWarnings("resource")
     public static String readString(String prompt) {
@@ -121,8 +125,6 @@ public class Helper {
         }
         return date;
     }
-
-    private static String quit = "0";
 
     public static int getUserOption(String title, String[] menu) {
         displayMenu(title, menu);
