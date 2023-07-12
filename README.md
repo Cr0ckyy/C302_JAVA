@@ -1,4 +1,1 @@
-This is a collection of all the Java Web Service, Data Structure, and Algorithm projects I worked on while studying full-time at Republic Polytechnic for a Diploma in Mobile Software Development.
-
-
-
+This is a collection of all the Java Web Service, Data Structure, and Algorithm projects I worked on while studying full-time for a Diploma in Mobile Software Development at Republic Polytechnic as two moudles of project work combined into one single project file.
